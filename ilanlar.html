@@ -1,0 +1,1039 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>İlanlarımız</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .index-main{
+      max-width: 1440px;
+      margin: auto;
+      padding: 0 180px;
+    }
+    .header-config{
+      max-width: 1440px;
+      margin: auto;
+      padding: 0 180px;
+
+    }
+    .ilanlar-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      max-width: 1320px;
+      margin: 20px auto;
+      gap: 20px;
+      width: 100%;
+    }
+
+    .ilanlar-grid-item {
+      height: 523px;
+      background-color: white;
+      border-radius: 20px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .ilanlar-grid-item .image-box {
+      width: 100%;
+      height: 50%;
+      position: relative;
+    }
+
+    .ilanlar-grid-item .image-box img {
+      height: 100%;
+      width: 100%;
+    }
+
+    .selling-label {
+      color: white;
+      background-color: #1B449D;
+      width: 72.21px;
+      height: 33.2px;
+      border-radius: 5px;
+      font-size: 14.08px;
+      font-weight: 500;
+      line-height: 22.13px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+
+    .renting-label {
+      color: white;
+      background-color: #DE1F2F;
+      width: 72.21px;
+      height: 33.2px;
+      border-radius: 5px;
+      font-size: 14.08px;
+      font-weight: 500;
+      line-height: 22.13px;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: absolute;
+      top: 30px;
+      left: 20px;
+    }
+
+    .ilanlar-grid-item .price-box {
+      background-color: #1B449D;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 46px;
+      font-size: 18px;
+      font-weight: 500;
+      line-height: 30px;
+      text-align: center;
+
+
+    }
+
+    .ilanlar-grid-item .text-box {
+      padding: 0px 25px;
+    }
+
+    .ilanlar-grid-item .place-name {
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 30.18px;
+      text-align: center;
+
+    }
+
+    .ilanlar-grid-item .text-row {
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .ilanlar-grid-item .text-row img,
+    .text-row-grid img {
+      height: 16px;
+      width: 16px;
+      margin-right: 10px;
+    }
+
+    .ilanlar-grid-item hr {
+      color: black;
+      height: 0;
+      border: none;
+      border-bottom: 0.5px solid black;
+      opacity: 1;
+      margin: 0;
+      margin: 5px 0;
+    }
+
+    .ilanlar-grid-item .text-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .ilanlar-grid-item .text-row-grid {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+    }
+
+    .ta-left {
+      justify-content: end !important;
+    }
+    .top-nav-config{
+      max-width: 1440px;
+      margin: auto;
+      width: 100%;
+      padding: 0 180px;
+    }
+    @media (max-width:1200px){
+      
+      .top-nav-config{
+        padding: 0;
+      }
+      .header-config{
+        padding: 0;
+      }
+      .index-main{
+        padding: 20px;
+      }
+    }
+    @media (max-width:992px){
+      .ilanlar-grid{
+        grid-template-columns: repeat(2,1fr);
+      }
+      
+    }
+    
+    @media (max-width:768px){
+      .ilanlar-grid{
+        grid-template-columns: repeat(1,1fr);
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="top_nav ">
+        <div class="top_nav_inner d-flex align-items-center justify-content-end ">
+          <div class="top-nav-config ">
+            <div class=" d-flex gap-2 justify-content-end ">
+              <div class="d-flex gap-2">
+                <i class="fa-solid fa-phone mb-0"></i>
+                <p class="mb-0">+90 312 333 44 22</p>
+              </div>
+              <div class=" d-flex gap-2">
+                <i class="fa-solid fa-phone mb-0"></i>
+                <p class="mb-0">+90 312 333 44 22</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <div class="bottom_nav_inner">
+          <div class="header-config pt-4  d-flex justify-content-between container">
+            <div class="logo px-0">
+              <div class="logo_inner d-flex align-items-center gap-4">
+                <a href="index.html"> <img src="assets/img/Logo.png" alt=""></a>
+                <a class="btn" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button"
+                  aria-controls="offcanvasExample">
+                  <i class="fa-solid fa-bars-staggered"></i>
+                </a>
+                <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample"
+                  aria-labelledby="offcanvasExampleLabel">
+                  <div class="offcanvas-header">
+                    <img src="assets/img/Logo.png" class="offcanvas-title" id="offcanvasExampleLabel" alt="">
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                  </div>
+                  <div class="offcanvas-body">
+                    <div class="container px-0 pt-5">
+                      <div>
+                        <a href="#">Ofislerimiz</a>
+                      </div>
+                      <div>
+                        <a href="danismanlarimiz.html">Danışmanlarımız</a>
+                      </div>
+                      <div>
+                        <a href="ilanlar.html">İlanlar</a>
+                      </div>
+                      <div>
+                        <a href="#">Ekibimiz</a>
+                      </div>
+                      <div>
+                        <a href="iletisim.html">İletişim</a>
+                      </div>
+                      <div>
+                        <a href="#">Frenchise</a>
+                      </div>
+                      <div>
+                        <a href="#">Seminerlerimiz</a>
+                      </div>
+                      <div>
+                        <a href="#">Eğitimlerimiz</a>
+                      </div>
+                    </div>
+
+
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="nav_bar d-flex justify-content-center align-items-center ps-5">
+              <ul class="m-0 ps-5  text-end">
+                <li><a href="">Ofislerimiz</a></li>
+                <li><a href="">Danışmanlarımız</a></li>
+                <li><a href="">İlanlar</a></li>
+                <li><a href="">Ekibimiz</a></li>
+                <li><a href="iletisim.html">İletişim</a></li>
+              </ul>
+            </div>
+
+            <div class="nav_bar_buttons d-flex align-items-center justify-content-center gap-3">
+              <a class="btn btn-danger" href="#">Hesap Oluşturun</a>
+              <div class="dropdown">
+                <a class="btn btn-danger dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Giriş Yapın
+                </a>
+                <ul class="dropdown-menu bg-danger">
+                  <li><a class="dropdown-item text-color" href="#"><i class="fa-solid fa-angle-right"></i>Bireysel</a>
+                  </li>
+                  <li><a class="dropdown-item text-color" href="#"><i class="fa-solid fa-angle-right"></i>Ofis
+                      Kullanıcısı</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      </div>
+    </nav>
+
+  </header>
+<div class="index-main">
+  <div class="ilanlar_search pt-5">
+    <div class="container ilanlar_search_inner d-flex gap-3 justify-content-center align-items-center">
+      <div class="ilanlar_search_content d-flex w-100">
+        <select class="form-select w-30" aria-label="Default select example">
+          <option selected>Tüm İlanlar</option>
+          <option value="1">Satılık</option>
+          <option value="2">Kiralık</option>
+        </select>
+        <select class="form-select w-30" aria-label="Default select example">
+          <option selected>Tüm Kategoriler</option>
+          <option value="1">test1</option>
+          <option value="2">test2</option>
+          <option value="3">test3</option>
+        </select>
+        <select class="form-select w-30" aria-label="Default select example">
+          <option selected>Tüm Filtreler</option>
+          <option value="1">Bir</option>
+          <option value="2">İki</option>
+          <option value="3">Üç</option>
+        </select>
+      </div>
+      <div class="ilanlar_button">
+        <button class="btn btn-blue" style="height: 42px;" type="submit"><i
+            class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="ilanlar_filter">
+    <div class="container d-flex justify-content-between align-items-center pt-4">
+      <div class="filter_text">
+        <h5>Arama Sonuçları</h5>
+        <p>Bulunan 14854 kaydın 1-9 arası gösteriliyor</p>
+      </div>
+      <div class="filter_buttons">
+        <a class="btn btn-sm btn-danger" href="#"><i class="fa-solid fa-sort"></i>Sırala</a>
+        <a class="btn btn-sm btn-danger" href="#">Aramayı Kaydet</a>
+      </div>
+    </div>
+  </div>
+  <div class="ilanlar-grid">
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="renting-label">Kiralık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="renting-label">Kiralık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="renting-label">Kiralık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="renting-label">Kiralık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    <a href="ilan-detay.html">
+      <div class="ilanlar-grid-item">
+        <div class="image-box">
+          <img src="assets/img/ilanlar-grid-img.png" alt="">
+          <div class="selling-label">Satılık</div>
+        </div>
+        <div class="text-box">
+          <p class="place-name">1963 S Crescent Heights Bulvarı</p>
+          <p class="text-row">
+            <img src="assets/img/location.png" alt="">
+            <span class="location">Hills, CA 90210</span>
+          </p>
+          <hr>
+          <div class="text-grid">
+            <p class="square text-row-grid">
+              <img src="assets/img/square.png" alt="">
+              <span>2400</span>
+              Metrekare
+            </p>
+            <p class="garage ta-left text-row-grid">
+              <img src="assets/img/car.png" alt="">
+              <span>2</span>
+              Garaj
+            </p>
+            <p class="bedroom text-row-grid">
+              <img src="assets/img/bed.png" alt="">
+              <span>20</span>
+              Yatak Odası
+            </p>
+            <p class="bathroom text-row-grid ta-left">
+              <img src="assets/img/bath.png" alt="">
+              <span>8</span>
+              Banyo
+            </p>
+          </div>
+          <hr>
+          <div class="text-grid">
+            <p class="name text-row-grid">
+              <img src="assets/img/bi_person-fill.png" alt="">
+              Michel Smith
+            </p>
+            <p class="time-ago text-row-grid ta-left">
+              <img src="assets/img/bx_time-five.png" alt="">
+              <span>1</span> days ago
+            </p>
+          </div>
+        </div>
+        <div class="price-box">
+          ₺5000
+        </div>
+      </div>
+    </a>
+    
+
+  </div>
+
+  <div class="container d-flex justify-content-center">
+    <nav aria-label="page navigation example">
+      <ul class="pagination d-flex gap-2">
+        <li class="page-item"><a class="page-link" href="#">İlk</a></li>
+        <li class="page-item"><a class="page-link active" href="#">1</a></li>
+        <li class="page-item"><a class="page-link" href="#">2</a></li>
+        <li class="page-item"><a class="page-link" href="#">3</a></li>
+        <li class="page-item"><a class="page-link" href="#">Son</a></li>
+      </ul>
+    </nav>
+  </div>
+
+</div>
+
+
+  <div class="container-fluid mt-5 footer d-flex align-items-center">
+    <div class="container">
+      <div class="footer_inner d-flex justify-content-between">
+        <div class="footer_logo d-flex flex-column gap-3">
+          <img src="assets/img/footerlogo.png" alt="">
+          <p class="footer_img_text">2728 Hickory StreetSalt
+            Lake City, UT 84104</p>
+          <p class="footer_num">+90 206 214 22 98</p>
+          <p class="footer_mail">support@erva.com</p>
+        </div>
+        <div class="footer_menu pt-4">
+          <h3>Sayfalar</h3>
+          <ul class="pt-4 d-flex flex-column gap-2">
+            <li><a href="">Ofislerimiz</a></li>
+            <li><a href="danismanlarimiz.html">Danışmanlarımız</a></li>
+            <li><a href="">İlanlar</a></li>
+            <li><a href="">Ekibimiz</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+
+          </ul>
+        </div>
+        <div class="footer_menu pt-4">
+          <h3>Hakkımızda</h3>
+          <ul class="pt-4 d-flex flex-column gap-2">
+            <li><a href="">Ekibimiz</a></li>
+            <li><a href="">Gayrimenkul Almak</a></li>
+            <li><a href="">Gayrimenkul Satmak</a></li>
+            <li><a href="">Danışman Olmak</a></li>
+            <li><a href="">Seminerler</a></li>
+            <li><a href="">Gizlilik Politikamız</a></li>
+          </ul>
+        </div>
+        <div class="footer_menu pt-4">
+          <h3>Bizi Seçmeniz için <br> 5 Neden</h3>
+          <ul class="pt-4 d-flex flex-column gap-2">
+            <li><a href="">Köklü Marka</a></li>
+            <li><a href="">Deneyimli Ekip</a></li>
+            <li><a href="">Güç Birlikteliği</a></li>
+            <li><a href="">Hizmet Alanları</a></li>
+            <li><a href="">Networking</a></li>
+          </ul>
+        </div>
+        <div class="footer_menu pt-4">
+          <h3>Bize Katılın</h3>
+          <ul class="pt-4 d-flex flex-column gap-2">
+            <li><a href="">Danışman Ol</a></li>
+            <li><a href="">Franchise</a></li>
+            <li><a href="iletisim.html">İletişim</a></li>
+            <li><a href="">Ofislerimiz</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
+  <script src="assets/js/app.js"></script>
+</body>
+
+</html>

@@ -12,6 +12,13 @@
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/style.css" />
   <style>
+    .nav_bar_buttons{
+      padding: 10px;
+      padding-right: 0;
+    }
+    .nav_bar_buttons a:first-child{
+      min-width: 140px;
+    }
     .index-main{
       max-width: 1440px;
       margin: auto;
@@ -21,13 +28,16 @@
       max-width: 1440px;
       margin: auto;
       padding: 0 180px;
-
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      
     }
     .ilanlar-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       max-width: 1320px;
-      margin: 20px auto;
+      margin: 20px 0;
       gap: 20px;
       width: 100%;
     }
@@ -105,7 +115,7 @@
     }
 
     .ilanlar-grid-item .text-box {
-      padding: 0px 25px;
+      padding: 0px 20px;
     }
 
     .ilanlar-grid-item .place-name {
@@ -164,10 +174,10 @@
     @media (max-width:1200px){
       
       .top-nav-config{
-        padding: 0;
+        padding: 20px;
       }
       .header-config{
-        padding: 0;
+        padding: 20px;
       }
       .index-main{
         padding: 20px;
@@ -208,7 +218,7 @@
 
         </div>
         <div class="bottom_nav_inner">
-          <div class="header-config pt-4  d-flex justify-content-between container">
+          <div class="header-config ">
             <div class="logo px-0">
               <div class="logo_inner d-flex align-items-center gap-4">
                 <a href="index.html"> <img src="assets/img/Logo.png" alt=""></a>
@@ -256,8 +266,8 @@
               </div>
             </div>
 
-            <div class="nav_bar d-flex justify-content-center align-items-center ps-5">
-              <ul class="m-0 ps-5  text-end">
+            <div class="nav_bar d-flex justify-content-center align-items-center ">
+              <ul class="m-0   text-end">
                 <li><a href="">Ofislerimiz</a></li>
                 <li><a href="">Danışmanlarımız</a></li>
                 <li><a href="">İlanlar</a></li>
@@ -289,7 +299,7 @@
   </header>
 <div class="index-main">
   <div class="ilanlar_search pt-5">
-    <div class="container ilanlar_search_inner d-flex gap-3 justify-content-center align-items-center">
+    <div class=" ilanlar_search_inner d-flex gap-3 justify-content-center align-items-center">
       <div class="ilanlar_search_content d-flex w-100">
         <select class="form-select w-30" aria-label="Default select example">
           <option selected>Tüm İlanlar</option>
@@ -318,7 +328,7 @@
   </div>
 
   <div class="ilanlar_filter">
-    <div class="container d-flex justify-content-between align-items-center pt-4">
+    <div class=" d-flex justify-content-between align-items-center pt-4">
       <div class="filter_text">
         <h5>Arama Sonuçları</h5>
         <p>Bulunan 14854 kaydın 1-9 arası gösteriliyor</p>
@@ -975,7 +985,7 @@
 
   <div class="container-fluid mt-5 footer d-flex align-items-center">
     <div class="container">
-      <div class="footer_inner d-flex justify-content-between">
+      <div class="footer_inner ">
         <div class="footer_logo d-flex flex-column gap-3">
           <img src="assets/img/footerlogo.png" alt="">
           <p class="footer_img_text">2728 Hickory StreetSalt

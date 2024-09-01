@@ -1,0 +1,437 @@
+/* görünür ekrana gelince çalışacak olan animasyonlar,
+    contentEnterBottom ve onun gibi classlar html ögesinin class
+    kısmına eklenerek kullanılır
+*/
+.contentEnterBottom {
+    opacity: 0;
+    transform: translateY(50px);
+    /* Başlangıçta aşağıda olacak */
+    transition: opacity 2s, transform 2s;
+}
+
+.contentEnterBottom.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.contentEnterLeft {
+    opacity: 0;
+    transform: translateX(-50px);
+    /* Başlangıçta solda olacak */
+    transition: opacity 2s, transform 2s;
+}
+
+.contentEnterLeft.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.contentEnterRight {
+    opacity: 0;
+    transform: translateX(50px);
+    /* Başlangıçta sağda olacak */
+    transition: opacity 2s, transform 2s;
+}
+
+.contentEnterRight.show {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.text-enter-right,
+.text-enter-left,
+.text-enter-bottom {
+    opacity: 0;
+    position: relative;
+
+}
+
+/* direkt çalışacak animasyonlar text-enter-right ve onun  gibi
+    ögeler html ögesinin class kısmına eklenerek kullanılır
+*/
+.text-enter-right {
+    animation: enterFromRight 2s forwards;
+}
+
+.text-enter-left {
+    animation: enterFromLeft 2s forwards;
+}
+
+.text-enter-bottom {
+    animation: enterFromBottom 2s forwards;
+}
+
+@keyframes enterFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes enterFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes enterFromBottom {
+    0% {
+        opacity: 0;
+        transform: translateY(100%);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* carousel 
+    öge hireyarşisi
+    custom-carousel
+        custom-carousel-inner
+            custom-crousel-item
+        paginationBox
+        custom-prev
+        custom-next
+        : şeklindedir
+        ögeler özelleştirilebilir.
+        custom-carousel-item içine 
+        transform: translateX(-50%); yazılarak
+        etraftaki kartların yarısı gösterilmek istenildiğinde bu kullanıalibir.
+        ekran boyutu 768px altına düştüğünde carousel-itemden bir tane gösterilir
+*/
+/* örnek kullanım
+    <div id="customCarouselBeta" class="custom-carousel" data-visible="3" data-active="1" data-center-active="true" data-auto-slide="3000">
+        <div class="custom-carousel-inner">
+            <div class="custom-carousel-item active">
+                <div class="card">1</div>
+            </div>
+            <div class="custom-carousel-item">
+                <div class="card">2</div>
+            </div>
+            <div class="custom-carousel-item">
+                <div class="card">3</div>
+            </div>
+            <div class="custom-carousel-item">
+                <div class="card">5</div>
+            </div>
+            <div class="custom-carousel-item">
+                <div class="card">6</div>
+            </div>
+        </div>
+        <div class="paginationBox"></div>
+        <button class="custom-carousel-control custom-prev" data-target="customCarouselBeta">Prev</button>
+        <button class="custom-carousel-control custom-next" data-target="customCarouselBeta">Next</button>
+    </div>
+    
+*/
+/* 
+id="customCarouselBeta" class="custom-carousel" data-visible="3" data-active="1" data-center-active="true"
+    id, diger ögelerin düzgün çalışabilmesi için her carousele eşsiz bir isim olark verilmelidir.
+    custom-carousel, yapının carousel olduğunu belirtmek için class a yazılmalıdır.
+    data-visible, ögesi carouselde kaç ögenin gösterileceğini belirlemek için kullanılır(1 kart,2kart,3kart...vs)
+    data-active, ögesi kartların hangi indeksinin aktif özelliği alacağını belirtmek için kullanılır. ve aktif olan
+        kart başta göstewrilecek olandır(ilk yükleme ekranında)
+    data-center-active, ögesiaktif olan kartın ekranın ortasında durup durmayacağını belirler true ya da false değeri alır.
+    paginationBox, ögesi pagination itemlerin yer aldığı yerdir, pagination item yazmaya gerek yoktur carousel item sayısı
+        kadar pagination item pagination box içine yerleştirilir
+    custom-carousel-control, ögesi carousel yön kontrolü için kullanılacağını belirtir.
+    custom-prev ve custom-next, ögeleri kontrol tuşuna geri ve ileri olarak işlev atar.
+    data-target, ögesi custom-carousel-control olan class olan buton işlevi gören elemenlarda kullanılır ve en başta carousele atanan id
+    buraya yazılır.
+*/
+.custom-carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px auto;
+}
+
+.custom-carousel-inner {
+    display: flex;
+    transition: transform 0.5s ease;
+
+}
+
+.custom-carousel-item {
+    min-width: calc(100% / var(--visible-items, 1));
+    box-sizing: border-box;
+    text-align: center;
+    background-color: #b8b8b8;
+    border: 1px solid black;
+    display: flex;
+    justify-content: center;
+
+    /* transform: translateX(-50%);  etraftaki kartların yarısı gösterilmek istenildiğinde bu kullanıalibir*/
+}
+
+.custom-carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.custom-prev {
+    left: 10px;
+}
+
+.custom-next {
+    right: 10px;
+}
+
+
+.paginationBox {
+    display: flex;
+    justify-content: center;
+    margin: 20px;
+}
+
+.paginationItem {
+    height: 18px;
+    width: 30px;
+    background-color: rgb(255, 252, 252);
+    border: 1px solid black;
+    transition: ease 0.5s;
+}
+
+.paginationItemActive {
+    background-color: rgb(0, 0, 0);
+    width: 45px;
+}
+
+/* custom-infinite-carousel start */
+.custom-infinite-carousel {
+    width: 100%;
+    height: 200px;
+    position: relative;
+    margin: auto;
+    background: #ececec3d;
+    overflow: hidden;
+
+}
+
+.custom-infinite-carousel-item {
+    height: 200px;
+    position: absolute;
+    background: rgb(206, 203, 203);
+    z-index: 99;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 2px solid rgb(83, 83, 83);
+}
+
+.custom-infinite-carousel-box {
+    position: relative;
+}
+
+/* 
+<div class="custom-infinite-carousel" id ="custom-infinite-carousel03" data-target="left" data-duration="30s" visibleItem="5">
+    <div class="custom-infinite-carousel-box">
+      <div class="custom-infinite-carousel-item"></div>
+      <div class="custom-infinite-carousel-item"></div>
+      <div class="custom-infinite-carousel-item"></div>
+      <div class="custom-infinite-carousel-item"></div>
+      <div class="custom-infinite-carousel-item"></div>
+      <div class="custom-infinite-carousel-item"></div>
+      
+    </div>
+  </div>
+
+*/
+/* custom-infinite-carousel end*/
+/* zıkkımın kökü BÜYÜK RESİMLİ GALERİ MODAL TIKLAMALI */
+/* ÖRNEK KULLANIM
+<div class="custom-gallery-box">
+        <div class="custom-gallery-box-bigImg"></div>
+        <div class="custom-gallery-box-items">
+            <img src="img/newConstruction.png" alt="Image 1">
+            <img src="img/aboutUs-clientsIMG.png" alt="Image 1">
+            <img src="img/newConstruction.png" alt="Image 1">
+            <img src="img/aboutUs-clientsIMG.png" alt="Image 1">
+            <img src="img/newConstruction.png" alt="Image 1">
+            <img src="img/aboutUs-clientsIMG.png" alt="Image 1">
+            <img src="img/newConstruction.png" alt="Image 1">
+            <img src="img/aboutUs-clientsIMG.png" alt="Image 1">
+            <img src="img/newConstruction.png" alt="Image 1">
+            <img src="img/aboutUs-clientsIMG.png" alt="Image 1">
+            
+        </div>
+        <a class="custom-gallery-box-prevBox">&#10094;</a>
+        <a class="custom-gallery-box-nextBox">&#10095;</a>
+    </div>
+
+    <!-- Added modal -->
+    <div id="myModal" class="custom-gallery-modal">
+        <span class="modal-close-button">&times;</span>
+        <a class="modal-prev-button">&#10094;</a>
+        <a class="modal-next-button">&#10095;</a>
+        <div class="custom-gallery-modal-content">
+            <img id="modalImg" src="" alt="Modal Image">
+        </div>
+    </div>
+*/
+.custom-gallery-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    max-width: 100%;
+    position: relative;
+    /* padding: 0 5%; */
+}
+
+.custom-gallery-box-bigImg {
+    width: 100%;
+    height: 494px;
+    border: 1px solid grey;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.5s ease
+}
+
+.custom-gallery-box-items {
+    width: 100%;
+    display: flex;
+    flex-wrap: nowrap;
+    overflow: hidden;
+    
+    
+}
+
+.custom-gallery-box-items img {
+    border: 1px solid grey;
+    border-radius: 5px;
+    height: 100px;
+    margin: 5px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+    
+}
+
+.custom-gallery-box-items img:hover {
+    transform: scale(1.1); /* Fare üzerine gelindiğinde büyüme efekti */
+}
+/* Added modal styles */
+.custom-gallery-modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.custom-gallery-modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 1440px;
+    position: relative;
+}
+
+.custom-gallery-modal-content img {
+    width: 100%;
+    height: auto;
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.modal-close-button:hover,
+.modal-close-button:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-prev-button,
+.modal-next-button {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-next-button {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.modal-prev-button:hover,
+.modal-next-button:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+.custom-gallery-box-prevBox,.custom-gallery-box-nextBox{
+    cursor: pointer;
+    position: absolute;
+    bottom: 2%;
+    width: auto;
+    padding: 16px;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-color: #1b449d;
+}
+.custom-gallery-box-prevBox{
+    left: 0%;
+    display: flex;
+    align-items: center;
+}
+.custom-gallery-box-nextBox{
+    right: 0%;
+}
+
+
+@media (max-width: 768px) {
+    .custom-carousel-item {
+        min-width: 100%;
+    }
+}

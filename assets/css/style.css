@@ -378,7 +378,10 @@ swiper-container {
 .danisanlar_search_content {
   height: 42px;
 }
-
+.contact_section{
+  max-width: 1320px;
+  margin: auto;
+}
 .contact_section>div {
   background-color: #fff;
 }
@@ -403,17 +406,6 @@ swiper-container {
 }
 
 
-.contact_bottom {
-  background: #f9f9f9;
-}
-
-.contact_bottom .container {
-  background: #fff;
-}
-
-.contact_bottom_text h4 {
-  font-size: 30px;
-}
 
 .content_bottom_text_inner .inner_item {
   font-size: 20px;
@@ -425,9 +417,6 @@ swiper-container {
   color: #000;
 }
 
-.contact_bottom_text_social i {
-  width: 10px;
-}
 
 .ilanlar_search_inner {
   box-shadow: 0px 30px 60px -15px #8f90bc26;
@@ -454,6 +443,7 @@ swiper-container {
   display: flex;
   justify-content: end;
   flex-wrap: wrap;
+  gap: 10px;
 }
 
 .filter_buttons a {
@@ -509,6 +499,57 @@ h4.display-6.pb-2 {
 .logo_inner .btn {
   display: none;
 }
+.selling-label {
+  color: white;
+  background-color: #1B449D;
+  width: 72.21px;
+  height: 33.2px;
+  border-radius: 5px;
+  font-size: 14.08px;
+  font-weight: 500;
+  line-height: 22.13px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+.selling-label-clear {
+  color: white;
+  background-color: #1B449D;
+  width: 72.21px;
+  height: 33.2px;
+  border-radius: 5px;
+  font-size: 14.08px;
+  font-weight: 500;
+  line-height: 22.13px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+}
+
+.renting-label {
+  color: white;
+  background-color: #DE1F2F;
+  width: 72.21px;
+  height: 33.2px;
+  border-radius: 5px;
+  font-size: 14.08px;
+  font-weight: 500;
+  line-height: 22.13px;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 30px;
+  left: 20px;
+}
+
 
 @media (max-width: 1199px) {
   .nav_bar {

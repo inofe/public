@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="tr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinamik İçerik Değiştirme</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        .menu {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+        }
+
+        .tab-button {
+            background-color: #f0f0f0;
+            border: 1px solid #ccc;
+            padding: 10px 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .tab-button.active {
+            background-color: #0056b3;
+            color: white;
+        }
+
+        .content {
+            display: flex;
+            justify-content: center;
+        }
+
+        .tab-content {
+            display: none;
+            max-width: 800px;
+            margin: 20px;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        /* safdsfgdsgfdsf0 */
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #ca1515;
+        }
+
+        .profile-container {
+            display: flex;
+            justify-content: space-between;
+            background-image: url('your-image-path');
+            background-size: cover;
+            padding: 20px;
+            border-radius: 10px;
+            color: white;
+        }
+
+        .left-section {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .left-section h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+
+        .icon-buttons {
+            display: flex;
+            gap: 10px;
+            margin-top: 10px;
+        }
+
+        .icon-button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        .portfolio-buttons {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .portfolio-buttons button {
+            background-color: #003f7f;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .right-section {
+            text-align: right;
+        }
+
+        .right-section p {
+            margin: 0;
+            font-size: 18px;
+        }
+
+        .right-section h1 {
+            margin: 5px 0;
+            font-size: 48px;
+        }
+
+        .stars {
+            color: #ffc107;
+            font-size: 24px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="menu">
+        <button class="tab-button" data-tab="hakkimda">Hakkımda</button>
+        <button class="tab-button" data-tab="uzmanlik">Uzmanlık Alanlarım</button>
+        <button class="tab-button" data-tab="yorumlar">Müşteri Yorumları</button>
+        <button class="tab-button" data-tab="portfoyum">Portföyüm</button>
+    </div>
+
+    <div class="content">
+        <div class="tab-content" id="hakkimda">
+            <h2>Hakkımda</h2>
+            <p>Bu alanda kendinizle ilgili bilgiler yer alacak.</p>
+        </div>
+        <div class="tab-content" id="uzmanlik">
+            <h2>Uzmanlık Alanlarım</h2>
+            <p>Burada uzmanlık alanlarınız yer alacak.</p>
+        </div>
+        <div class="tab-content" id="yorumlar">
+            <h2>Müşteri Yorumları</h2>
+            <p>Müşterilerinizin yorumları bu alanda yer alacak.</p>
+        </div>
+        <div class="tab-content" id="portfoyum">
+            <h2>Portföyüm</h2>
+            <p>Portföyünüz burada gösterilecek.</p>
+        </div>
+    </div>
+    <div class="">
+        <div class="profile-container">
+            <div class="left-section">
+                <h2>NEHİR YÜCEL</h2>
+                <button id="first-year-btn">İlk Yıl</button>
+                <div class="icon-buttons">
+                    <button id="like-btn" class="icon-button"><i class="fas fa-heart"></i></button>
+                    <button id="share-btn" class="icon-button"><i class="fas fa-share-alt"></i></button>
+                </div>
+                <div class="portfolio-buttons">
+                    <button id="satilik-btn">Satılık Portföyler (0)</button>
+                    <button id="kiralik-btn">Kiralık Portföyler (0)</button>
+                </div>
+            </div>
+            <div class="right-section">
+                <p>Portföy İşlem Hızı</p>
+                <h1>9,7</h1>
+                <div class="stars">
+                    <span>★★★★★</span>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const buttons = document.querySelectorAll('.tab-button');
+            const contents = document.querySelectorAll('.tab-content');
+
+            buttons.forEach(button => {
+                button.addEventListener('click', function () {
+                    // Tüm içerikleri gizle
+                    contents.forEach(content => content.classList.remove('active'));
+                    // Tüm butonlardan aktif sınıfını kaldır
+                    buttons.forEach(btn => btn.classList.remove('active'));
+
+                    // Tıklanan butona aktif sınıfı ekle
+                    button.classList.add('active');
+                    // İlgili içeriği göster
+                    const tabId = button.getAttribute('data-tab');
+                    document.getElementById(tabId).classList.add('active');
+                });
+            });
+
+            // İlk buton ve içerik varsayılan olarak aktif olsun
+            buttons[0].classList.add('active');
+            contents[0].classList.add('active');
+        });
+
+    </script>
+</body>
+
+</html>

@@ -549,6 +549,43 @@ h4.display-6.pb-2 {
   top: 30px;
   left: 20px;
 }
+.counselor-info-box {
+  box-shadow: 8px 8px 15px 0px #0000000D;
+  padding: 20px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 10px;
+}
+
+.counselor-info-box .img-box {
+  max-width: 212px;
+  max-height: 274px;
+}
+
+.counselor-info-box .img-box img {
+  width: 100%;
+  height: 100%;
+}
+
+.counselor-info-box .text-box {
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  gap: 40px;
+}
+
+.counselor-info-box .text-box .mailbox,
+.phonebox {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.social-media-icons {
+  display: flex;
+  gap: 15%;
+}
 
 
 @media (max-width: 1199px) {

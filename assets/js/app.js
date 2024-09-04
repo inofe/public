@@ -58,5 +58,30 @@ document.addEventListener('DOMContentLoaded', function () {
     
   }
 });
+if (document.querySelector('.menu')){
+  document.addEventListener('DOMContentLoaded', function () {
+    const buttons = document.querySelectorAll('.tab-button');
+    const contents = document.querySelectorAll('.tab-content');
 
+    buttons.forEach(button => {
+        button.addEventListener('click', function () {
+            // Tüm içerikleri gizle
+            contents.forEach(content => content.classList.remove('active'));
+            // Tüm butonlardan aktif sınıfını kaldır
+            buttons.forEach(btn => btn.classList.remove('active'));
+
+            // Tıklanan butona aktif sınıfı ekle
+            button.classList.add('active');
+            // İlgili içeriği göster
+            const tabId = button.getAttribute('data-tab');
+            document.getElementById(tabId).classList.add('active');
+        });
+    });
+
+    // İlk buton ve içerik varsayılan olarak aktif olsun
+    buttons[0].classList.add('active');
+    contents[0].classList.add('active');
+});
+
+  }
 

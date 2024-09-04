@@ -16,7 +16,7 @@
         .ilan-detay-main {
             max-width: 1320px;
             margin: auto;
-            padding: 30px 0px;
+            padding: 30px 90px;
             min-height: 500px;
             display: grid;
             grid-template-columns: repeat(5, 1fr);
@@ -144,37 +144,7 @@
             max-width: 130px;
         }
 
-        .counselor-info-box {
-            box-shadow: 8px 8px 15px 0px #0000000D;
-            padding: 20px;
-            display: grid;
-            grid-template-columns: repeat(1, 1fr);
-            border-radius: 10px;
-        }
-
-        .counselor-info-box .img-box {
-            max-width: 212px;
-            max-height: 274px;
-        }
-
-        .counselor-info-box .img-box img {
-            width: 100%;
-            height: 100%;
-        }
-
-        .counselor-info-box .text-box {
-            display: flex;
-            flex-direction: column;
-            padding: 20px 0;
-            gap: 40px;
-        }
-
-        .counselor-info-box .text-box .mailbox,
-        .phonebox {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
+        
 
         .counselor-icon {
             width: 28px;
@@ -195,9 +165,138 @@
             font-size: 14px;
             font-weight: 300;
         }
-        .social-media-icons{
+
+       
+
+        .counselor-contact-box {
+            box-shadow: 8px 8px 15px 0px #0000000D;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            border-radius: 10px;
+        }
+
+        .counselor-contact-box .title {
+            font-size: 18px;
+            font-weight: 600;
+            line-height: 27px;
+            text-align: left;
+            width: 80%;
+
+        }
+
+        .counselor-contact-form {
             display: flex;
-            gap:15%;
+            flex-direction: column;
+            gap: 11px;
+            padding-top: 20px;
+            background-color: white;
+        }
+
+        .counselor-contact-form input,
+        .counselor-contact-form textarea {
+
+            width: 100%;
+        }
+
+        .counselor-contact-form .text {
+            font-size: 11px;
+            font-weight: 400;
+            line-height: 15.4px;
+            letter-spacing: -0.02em;
+            text-align: left;
+            margin-bottom: -10px;
+
+        }
+
+        .ilan-info-box {
+            box-shadow: 8px 8px 15px 0px #0000000D;
+            border-radius: 10px;
+            width: 100%;
+            min-height: 100px;
+            grid-column: 1/6;
+            padding: 20px;
+            margin-top: 20px;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background-color: white;
+        }
+
+        .ilan-info-box-inner {
+            display: flex;
+            max-width: 396px;
+            width: 100%;
+        }
+
+        .ilan-info-box-inner .titles {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .ilan-info-box-inner .titles-item {
+            border-bottom: 1px solid black;
+            padding-left: 10px;
+
+            font-size: 14px;
+            font-weight: 600;
+            line-height: 40px;
+            text-align: left;
+
+        }
+
+        .ilan-info-box-inner .propeties {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .ilan-info-box-inner .propeties-item {
+            border-bottom: 1px solid black;
+            border-left: 1px solid black;
+
+            padding-left: 20px;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 40px;
+            text-align: left;
+
+        }
+
+        .propeties-item:last-child,
+        .titles-item:last-child {
+            border-bottom: none;
+        }
+        @media (max-width:992px){
+            .ilan-detay-main {
+                padding: 40px;
+            }
+        }
+        @media (max-width:768px){
+            .board{
+                grid-column: 1/6;
+                margin-right: 0;
+            }
+            .board-info-box{
+                flex-direction: column;
+            }
+            .board-img-box{
+                display: none;
+            }
+            .sidebar{
+                display: flex;
+                grid-column: 1/6;
+                width: 100%;
+            }
+            .ilan-info-box{
+                grid-template-columns: repeat(1,1fr);
+                gap: 40px;
+            }
+        }
+        @media (max-width:500px){
+            .sidebar{
+                flex-direction: column;
+            }
         }
     </style>
 </head>
@@ -404,7 +503,63 @@
                     </div>
                 </div>
             </div>
+            <div class="counselor-contact-box">
+                <div class="title">Danışmana Soru Sorun</div>
+                <form class="counselor-contact-form" action="">
+                    <span class="text">İsminiz</span>
+                    <input type="text" id="name">
+                    <span class="text">E - Posta Adresiniz</span>
+                    <input type="email" id="email">
+                    <span class="text">Soyisminiz</span>
+                    <input type="text" id="surname">
+                    <span class="text">Gsm Numaranız</span>
+                    <input type="phone" id="phone">
+                    <span class="text">Mesajınız</span>
+                    <textarea name="text-content" id="text-content"></textarea>
+
+                </form>
+            </div>
         </div>
+        <div class="ilan-info-box">
+
+            <div class="ilan-info-box-inner">
+                <div class="titles">
+                    <div class="titles-item">Konum</div>
+                    <div class="titles-item">
+                        Tapu Durumu
+                    </div>
+                    <div class="titles-item">Portföy Kategorisi</div>
+                    <div class="titles-item">Fiyat</div>
+                    <div class="titles-item">Metrekare (Net)</div>
+                </div>
+                <div class="propeties">
+                    <div class="propeties-item">Konum</div>
+                    <div class="propeties-item">Kat Mülkiyeti</div>
+                    <div class="propeties-item">İşyeri</div>
+                    <div class="propeties-item">13.500.500 ₺</div>
+                    <div class="propeties-item">200</div>
+                </div>
+
+            </div>
+
+            <div class="ilan-info-box-inner second-grid">
+                <div class="titles">
+                    <div class="titles-item"> Oda Sayısı</div>
+                    <div class="titles-item"> Bina yaşı
+                    </div>
+                    <div class="titles-item">Bulunduğu Kat</div>
+                    <div class="titles-item">Isıtma</div>
+                    <div class="titles-item">Krediye Uygun</div>
+                </div>
+                <div class="propeties">
+                    <div class="propeties-item">3 + 1</div>
+                    <div class="propeties-item">1</div>
+                    <div class="propeties-item">Giriş</div>
+                    <div class="propeties-item">Kombi (Doğalgazlı)</div>
+                    <div class="propeties-item">Hayır</div>
+                </div>
+
+            </div>
     </section>
 
 

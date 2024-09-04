@@ -350,10 +350,14 @@ id="customCarouselBeta" class="custom-carousel" data-visible="3" data-active="1"
 
 .custom-gallery-modal-content {
     margin: auto;
-    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 80%;
+    height: 100%;
     max-width: 1440px;
     position: relative;
+    
 }
 
 .custom-gallery-modal-content img {

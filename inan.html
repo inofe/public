@@ -249,7 +249,7 @@
 
         .tab-content#portfoyum.active {
             display: flex;
-            padding: 20px;
+
             width: 100%;
 
         }
@@ -295,7 +295,6 @@
             width: 25px;
             border-radius: 50%;
         }
-    
 
         #first-year-btn {
             background-color: white;
@@ -327,7 +326,7 @@
         @media (max-width:992px) {
             .counselor-detail-main {
                 padding: 30px 20px;
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
 
             .menu {
@@ -338,9 +337,7 @@
                 grid-template-columns: 1fr;
                 max-width: 500px;
             }
-            .tab-content#yorumlar.active{
-                padding: 20px 0;
-            }
+
             .bd-left-blue {
                 border: none;
             }
@@ -631,7 +628,7 @@
 
                     </div>
                     <div class="tab-content" id="portfoyum">
-                        <swiper-container class="mySwiper4" space-between="30" loop="true" slides-per-view="2">
+                        <swiper-container class="mySwiper4" space-between="30" loop="true" slides-per-view="3">
                             <swiper-slide>
                                 <a href="ilan-detay.html">
                                     <div class="ilanlar-grid-item">

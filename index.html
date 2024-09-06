@@ -11,6 +11,104 @@
     integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
     crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/style.css" />
+  <style>
+    .search-bar {
+
+      border-radius: 10px;
+      padding: 10px;
+      display: flex;
+      flex-direction: column;
+      max-width: 100%;
+      margin: 20px auto;
+    }
+
+    .tabs {
+      display: flex;
+      justify-content: flex-start;
+
+    }
+
+    .tab {
+      background-color: transparent;
+      border: none;
+      padding: 10px 33px;
+      cursor: pointer;
+      color: #8F90A6;
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.2em;
+      text-align: left;
+
+    }
+
+    .tab.active {
+      color: #110229;
+
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 36px;
+      letter-spacing: 0.2em;
+      text-align: left;
+
+      background-color: #f9f9f9;
+      border-radius: 7px 7px 0 0;
+    }
+
+    .search-options {
+      display: flex;
+      gap: 15px;
+      align-items: center;
+      background-color: #f9f9f9;
+      padding: 10px 20px;
+      border-radius: 0 7px 7px 7px;
+    }
+
+    .option {
+      flex: 1;
+    }
+
+    label {
+      display: block;
+      padding-left: 13px;
+      margin-bottom: 5px;
+
+      font-size: 18px;
+      font-weight: 600;
+      line-height: 36px;
+      text-align: left;
+
+    }
+
+    select {
+      width: 100%;
+      padding: 10px;
+      border-radius: 5px;
+      border: none;
+      font-size: 16px;
+      font-weight: 400;
+      line-height: 36px;
+      text-align: left;
+      background-color: #f9f9f9;
+      color: #8F90A6;
+    }
+
+    .search-btn {
+      background-color: #e71d36;
+      border: none;
+      border-radius: 5px;
+      padding: 20px;
+      cursor: pointer;
+      color: #fff;
+
+    }
+
+    .search-btn img {
+      width: 20px;
+      height: 20px;
+    }
+  </style>
 </head>
 
 <body>
@@ -123,6 +221,43 @@
       <div class="text-container pt-4">
         <p class="py-0 ps-4 h6">Hayalinizdeki evi bulmak artık daha kolay! Sadece </p>
         <p class="py-0 ps-4 h6">isteklerinizi belirtin, gerisini bize bırakın.</p>
+        <div class="search-bar">
+          <div class="tabs">
+            <button class="tab active">Tümü</button>
+            <button class="tab">Kiralık</button>
+            <button class="tab">Satılık</button>
+          </div>
+
+          <div class="search-options">
+            <div class="option">
+              <label for="location">Konum</label>
+              <select id="location">
+                <option>Şehrinizi Seçin</option>
+                <!-- Add more options here -->
+              </select>
+            </div>
+
+            <div class="option">
+              <label for="type">Emlak Tipi</label>
+              <select id="type">
+                <option>Emlak Tipini Seçin</option>
+                <!-- Add more options here -->
+              </select>
+            </div>
+
+            <div class="option">
+              <label for="price">Fiyat aralığı</label>
+              <select id="price">
+                <option>Fiyat Aralığını Seçin</option>
+                <!-- Add more options here -->
+              </select>
+            </div>
+
+            <button class="search-btn">
+              <img src="assets/img/search.png" alt="Search"> <!-- Add search icon if necessary -->
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -195,7 +330,7 @@
       <swiper-slide>
         <div class="slider_item">
           <div class="sliderimg">
-            <a href=""> <img src="assets/img/sliderimg1.png"  alt=""></a>
+            <a href=""> <img src="assets/img/sliderimg1.png" alt=""></a>
             <div class="category_new ms-3 mb-3 d-flex justify-content-center align-items-center gap-2">
               <div class="category_icon"><img src="assets/img/sliderhomeicon.png" width="20px" height="20px" alt="">
               </div>
@@ -218,7 +353,7 @@
       <swiper-slide>
         <div class="slider_item">
           <div class="sliderimg">
-            <a href=""> <img src="assets/img/sliderimg4.png"  alt=""></a>
+            <a href=""> <img src="assets/img/sliderimg4.png" alt=""></a>
             <div class="category_hot ms-3 mb-3 d-flex justify-content-center align-items-center gap-2">
               <div class="category_icon"><img src="assets/img/sliderhoticon.png" width="20px" height="20px" alt="">
               </div>
@@ -241,7 +376,7 @@
       <swiper-slide>
         <div class="slider_item">
           <div class="sliderimg">
-            <a href=""> <img src="assets/img/sliderimg1.png"  alt=""></a>
+            <a href=""> <img src="assets/img/sliderimg1.png" alt=""></a>
             <div class="category_price ms-3 mb-3 d-flex justify-content-center align-items-center gap-2">
               <div class="category_icon"><img src="assets/img/sliderpriceicon.png" width="18px" height="18px" alt="">
               </div>
@@ -264,7 +399,7 @@
       <swiper-slide>
         <div class="slider_item">
           <div class="sliderimg">
-            <a href=""> <img src="assets/img/sliderimg4.png"  alt=""></a>
+            <a href=""> <img src="assets/img/sliderimg4.png" alt=""></a>
             <div class="category_new ms-3 mb-3 d-flex justify-content-center align-items-center gap-2">
               <div class="category_icon"><img src="assets/img/sliderhomeicon.png" width="20px" height="20px" alt="">
               </div>
@@ -287,7 +422,7 @@
       <swiper-slide>
         <div class="slider_item">
           <div class="sliderimg">
-            <a href=""> <img src="assets/img/sliderimg1.png"  alt=""></a>
+            <a href=""> <img src="assets/img/sliderimg1.png" alt=""></a>
             <div class="category_price ms-3 mb-3 d-flex justify-content-center align-items-center gap-2">
               <div class="category_icon"><img src="assets/img/sliderpriceicon.png" width="18px" height="18px" alt="">
               </div>
@@ -310,7 +445,7 @@
       <swiper-slide>
         <div class="slider_item">
           <div class="sliderimg">
-            <a href=""> <img src="assets/img/sliderimg4.png"  alt=""></a>
+            <a href=""> <img src="assets/img/sliderimg4.png" alt=""></a>
             <div class="category_hot ms-3 mb-3 d-flex justify-content-center align-items-center gap-2">
               <div class="category_icon"><img src="assets/img/sliderhoticon.png" width="20px" height="20px" alt="">
               </div>
@@ -356,63 +491,63 @@
     <swiper-container class="mySwiper2" init="false">
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team1.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team1.png" alt=""></div>
           <div class="team_name text-center">Batuhan D.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team2.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team2.png" alt=""></div>
           <div class="team_name text-center">Eylül G.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team1.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team1.png" alt=""></div>
           <div class="team_name text-center">Ahmet K.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team2.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team2.png" alt=""></div>
           <div class="team_name text-center">Kadir T.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team1.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team1.png" alt=""></div>
           <div class="team_name text-center">Test T.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team2.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team2.png" alt=""></div>
           <div class="team_name text-center">Example T.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team1.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team1.png" alt=""></div>
           <div class="team_name text-center">Lorem T.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team2.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team2.png" alt=""></div>
           <div class="team_name text-center">Lorem T.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
       </swiper-slide>
       <swiper-slide>
         <div class="team_inner d-flex flex-column gap-3">
-          <div class="team_img text-center"><img src="assets/img/team2.png"  alt=""></div>
+          <div class="team_img text-center"><img src="assets/img/team2.png" alt=""></div>
           <div class="team_name text-center">Lorem 2 T.</div>
           <div class="team_role text-center">Gayrimenkul Geliştiricisi</div>
         </div>
@@ -483,6 +618,18 @@
     crossorigin="anonymous"></script>
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-element-bundle.min.js"></script>
   <script src="assets/js/app.js"></script>
+  <script>
+    // Example tab switching functionality
+    const tabs = document.querySelectorAll('.tab');
+
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function () {
+        tabs.forEach(tab => tab.classList.remove('active'));
+        this.classList.add('active');
+      });
+    });
+
+  </script>
 
 </body>
 </body>
